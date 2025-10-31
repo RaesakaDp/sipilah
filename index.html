@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Smart Bin App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container" role="main">
+    <h1>Smart Bin App</h1>
+
+    <label for="username" class="sr-only">Nama pengguna</label>
+    <input id="username" type="text" placeholder="Nama pengguna" autocomplete="username" />
+
+    <label for="password" class="sr-only">Kata sandi</label>
+    <input id="password" type="password" placeholder="Kata sandi" autocomplete="current-password" />
+
+    <button id="loginBtn">Masuk</button>
+    <p id="loginError" class="error-msg" aria-live="polite"></p>
+
+    <p class="hint small">Gunakan: <strong>admin</strong> / <strong>1234</strong> (demo)</p>
+  </div>
+
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', function(){
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value.trim();
+      const err = document.getElementById('loginError');
+
+      if(!u || !p){ err.textContent = 'Isi username & password.'; return; }
+      // Demo simple auth
+      if(u === 'admin' && p === '1234'){
+        localStorage.setItem('sba_user', JSON.stringify({name: 'Admin', email: 'admin@smartbin.app'}));
+        localStorage.setItem('sba_logged', '1');
+        window.location.href = 'dashboard.html';
+      } else {
+        err.textContent = 'Nama pengguna atau kata sandi salah.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — Smart Bin App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">SB</div>
+      <div>
+        <div class="app-title">Smart Bin App</div>
+        <div class="small muted">Dashboard</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+      <a href="notifikasi.html" class="icon-btn" aria-label="Notifikasi">🔔</a>
+      <a href="profil.html" class="icon-btn" aria-label="Profil">👤</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row between">
+        <h2>Status Semua Tong</h2>
+        <div class="small muted">Realtime</div>
+      </div>
+
+      <div id="binsContainer" class="grid bins-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h3>Quick Actions</h3>
+      <div class="grid-3">
+        <button id="setAllAuto" class="btn">Set Semua → Otomatis</button>
+        <button id="refreshBtn" class="btn ghost">Refresh</button>
+        <a href="peta.html" class="btn ghost">Lihat Peta</a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="riwayat.html">Riwayat</a>
+    <a href="peta.html">Peta</a>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

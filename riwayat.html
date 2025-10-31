@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Riwayat — Smart Bin App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a href="dashboard.html" class="icon-btn">←</a>
+    <div class="app-title">Riwayat</div>
+    <div></div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Grafik Volume Harian — Semua Tong</h3>
+      <canvas id="volumeChart" height="120"></canvas>
+    </section>
+
+    <section class="card">
+      <h3>Filter</h3>
+      <div class="grid-3">
+        <select id="selectBin">
+          <option value="all">Semua Tong</option>
+        </select>
+        <select id="selectRange">
+          <option value="7">7 hari</option>
+          <option value="14">14 hari</option>
+          <option value="30" selected>30 hari</option>
+        </select>
+        <button id="btnExport" class="btn ghost">Export CSV</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

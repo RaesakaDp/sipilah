@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detail Bin — Smart Bin App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a href="dashboard.html" class="icon-btn">←</a>
+    <div class="app-title">Detail Tong</div>
+    <div></div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="detailCard">
+      <!-- Isi akan diisi oleh JS -->
+    </section>
+
+    <section class="card" id="controlCard">
+      <h3>Kontrol</h3>
+      <div class="controls">
+        <div class="control-row">
+          <div>
+            <div class="muted small">Mode</div>
+            <div id="modeLabel" class="value">—</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="modeAuto">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="control-row">
+          <div>
+            <div class="muted small">Kontrol Tutup</div>
+            <div id="lidLabel" class="value">—</div>
+          </div>
+          <div>
+            <button id="btnOpen" class="btn ghost">Buka</button>
+            <button id="btnClose" class="btn">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
