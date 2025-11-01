@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Bin App — History</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page history light">
+  <header class="app-top">
+    <div class="left"><img src="assets/logo.svg" class="mini-logo"><div class="brand"><strong>Smart Bin App</strong><span class="muted"> • History</span></div></div>
+    <div class="right"><button id="btnTheme4" class="icon-btn">🌓</button></div>
+  </header>
+
+  <main class="container">
+    <section class="card card-animated">
+      <div class="row between">
+        <h3>Daily volume</h3>
+        <div class="controls">
+          <select id="selectBin"><option value="all">All bins</option></select>
+          <select id="selectRange"><option value="7">7 days</option><option value="14">14 days</option><option value="30" selected>30 days</option></select>
+        </div>
+      </div>
+      <div class="chart-wrap card"><canvas id="volumeChart"></canvas></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">Home</a>
+    <a href="history.html" class="nav-item active">History</a>
+    <a href="map.html" class="nav-item">Map</a>
+    <a href="notifications.html" class="nav-item">Alerts</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

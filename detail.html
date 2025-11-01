@@ -1,52 +1,48 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Detail Bin — Smart Bin App</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Smart Bin App — Detail Bin</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header class="app-header">
-    <a href="dashboard.html" class="icon-btn">←</a>
-    <div class="app-title">Detail Tong</div>
-    <div></div>
+<body class="page detail light">
+  <header class="app-top">
+    <div class="left"><a href="dashboard.html" class="icon-btn">←</a><div class="brand"><strong>Detail Bin</strong></div></div>
+    <div class="right"><button id="btnTheme3" class="icon-btn">🌓</button></div>
   </header>
 
   <main class="container">
-    <section class="card" id="detailCard">
-      <!-- Isi akan diisi oleh JS -->
+    <section class="card card-animated" id="detailCard">
+      <!-- JS fills this: gauge, temp, location -->
     </section>
 
-    <section class="card" id="controlCard">
-      <h3>Kontrol</h3>
-      <div class="controls">
-        <div class="control-row">
-          <div>
-            <div class="muted small">Mode</div>
-            <div id="modeLabel" class="value">—</div>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="modeAuto">
-            <span class="slider"></span>
-          </label>
-        </div>
+    <section class="card card-animated" id="controlCard">
+      <h4>Controls</h4>
+      <div class="control-row">
+        <div><div class="muted small">Mode</div><div id="modeLabel" class="value">—</div></div>
+        <label class="switch"><input type="checkbox" id="modeAuto"><span class="slider"></span></label>
+      </div>
 
-        <div class="control-row">
-          <div>
-            <div class="muted small">Kontrol Tutup</div>
-            <div id="lidLabel" class="value">—</div>
-          </div>
-          <div>
-            <button id="btnOpen" class="btn ghost">Buka</button>
-            <button id="btnClose" class="btn">Tutup</button>
-          </div>
+      <div class="control-row" style="margin-top:12px">
+        <div><div class="muted small">Lid</div><div id="lidLabel" class="value">—</div></div>
+        <div style="display:flex;gap:8px">
+          <button id="btnOpen" class="btn ghost">Open</button>
+          <button id="btnClose" class="btn">Close</button>
         </div>
       </div>
     </section>
   </main>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">Home</a>
+    <a href="history.html" class="nav-item">History</a>
+    <a href="map.html" class="nav-item">Map</a>
+    <a href="notifications.html" class="nav-item">Alerts</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

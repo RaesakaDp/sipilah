@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Bin App — Auth</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page auth-page light">
+  <main class="auth-wrapper">
+    <div class="auth-card card-animated">
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <form id="loginForm" class="form" onsubmit="return app.login(event)">
+        <input id="loginUser" placeholder="Username" required>
+        <input id="loginPass" type="password" placeholder="Password" required>
+        <button class="btn primary" type="submit">Sign In</button>
+      </form>
+
+      <form id="registerForm" class="form hidden" onsubmit="return app.register(event)">
+        <input id="regName" placeholder="Full name" required>
+        <input id="regEmail" type="email" placeholder="Email" required>
+        <input id="regUser" placeholder="Username" required>
+        <input id="regPass" type="password" placeholder="Password" required>
+        <button class="btn primary" type="submit">Create account</button>
+      </form>
+
+      <div class="theme-switch">
+        <label class="switch"><input id="themeToggle" type="checkbox"><span class="slider"></span></label>
+        <span class="muted">Dark mode</span>
+      </div>
+
+      <div id="authError" class="error"></div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    // tabs
+    const tabLogin = document.getElementById('tabLogin');
+    const tabRegister = document.getElementById('tabRegister');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    tabLogin.addEventListener('click', ()=>{ tabLogin.classList.add('active'); tabRegister.classList.remove('active'); loginForm.classList.remove('hidden'); registerForm.classList.add('hidden'); });
+    tabRegister.addEventListener('click', ()=>{ tabRegister.classList.add('active'); tabLogin.classList.remove('active'); registerForm.classList.remove('hidden'); loginForm.classList.add('hidden'); });
+    // theme toggle on auth page
+    document.getElementById('themeToggle').addEventListener('change', ()=>{ document.body.classList.toggle('light'); document.body.classList.toggle('dark'); localStorage.setItem('sba_theme', document.body.classList.contains('dark') ? 'dark':'light'); });
+    // init theme from app
+    (function(){ if(localStorage.getItem('sba_theme')==='dark'){ document.body.classList.remove('light'); document.body.classList.add('dark'); document.getElementById('themeToggle').checked = true } })();
+  </script>
+</body>
+</html>

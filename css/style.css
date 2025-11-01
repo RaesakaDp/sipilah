@@ -1,0 +1,124 @@
+/* Smart Bin App — Final UI (animations + modern theme) */
+/* Palette: deep blue + cyan, neutral greys */
+:root{
+  --bg:#0b1220;
+  --card:#0f1724;
+  --muted:#94a3b8;
+  --text:#e6eef2;
+  --accent1:#0d3b66; /* deep blue */
+  --accent2:#15a3ff; /* cyan */
+  --success:#3bd07c;
+  --danger:#ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --shadow: 0 12px 30px rgba(2,6,23,0.6);
+}
+
+/* Light theme */
+body.light{
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --text:#0f1724;
+  --glass: rgba(0,0,0,0.03);
+  --shadow: 0 10px 30px rgba(11,20,30,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* SPLASH */
+.splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.logo{width:120px;filter:drop-shadow(0 8px 24px rgba(13,59,102,0.35));transform-origin:center;animation:logoPop .9s cubic-bezier(.2,.9,.2,1)}
+@keyframes logoPop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
+.loader{display:flex;gap:8px}
+.loader .dot{width:10px;height:10px;border-radius:50%;background:var(--accent2);animation:dot 1s infinite ease-in-out}
+.loader .dot:nth-child(2){animation-delay:.12s}
+.loader .dot:nth-child(3){animation-delay:.24s}
+@keyframes dot{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+/* AUTH */
+.auth-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.auth-card{width:360px;max-width:96%;border-radius:14px;padding:18px;background:var(--card);box-shadow:var(--shadow);transform:translateY(0);transition:transform .36s, box-shadow .36s}
+.card-animated{transform:translateY(6px);opacity:0;animation:cardIn .5s forwards}
+@keyframes cardIn{to{transform:none;opacity:1}}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{flex:1;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+.tab.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:0}
+.form{display:flex;flex-direction:column;gap:10px}
+.form input{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.hidden{display:none}
+.theme-switch{display:flex;align-items:center;gap:10px;margin-top:12px}
+
+/* APP TOP */
+.app-top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:transparent}
+.left{display:flex;gap:12px;align-items:center}
+.mini-logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(180deg,var(--accent1),var(--accent2));display:grid;place-items:center;color:white;font-weight:800}
+.brand{display:flex;flex-direction:column}
+.muted{color:var(--muted);font-size:13px}
+
+/* LAYOUT */
+.container{max-width:1100px;margin:18px auto;padding:0 16px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;margin-bottom:14px;box-shadow:var(--shadow)}
+
+/* STATS */
+.row{display:flex;gap:12px;align-items:center}
+.between{justify-content:space-between}
+.stat{font-weight:800;font-size:22px}
+
+/* GRID */
+.grid{display:grid;gap:12px}
+.bins-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
+
+/* BIN ITEM */
+.bin-item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s, box-shadow .18s}
+.bin-item:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.5)}
+.avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--accent1),var(--accent2));display:grid;place-items:center;color:white;font-weight:800;font-size:18px}
+.meta{flex:1}
+.meta .name{font-weight:700}
+.progress-bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;margin-top:8px}
+.progress{height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));transition:width .6s cubic-bezier(.2,.9,.2,1)}
+
+/* BUTTONS */
+.btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));border:0;color:white;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+/* CONTROL ROW */
+.control-row{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+
+/* SWITCH */
+.switch{display:inline-block}
+.switch input{display:none}
+.switch .slider{width:48px;height:28px;background:rgba(255,255,255,0.03);border-radius:20px;display:inline-block;position:relative}
+.switch .slider:after{content:'';width:20px;height:20px;background:white;border-radius:50%;position:absolute;left:4px;top:4px;transition:all .18s}
+.switch input:checked + .slider{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+.switch input:checked + .slider:after{transform:translateX(20px)}
+
+/* CHART WRAPPER */
+.chart-wrap{padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px}
+
+/* NOTIFICATIONS */
+.notif-list{list-style:none;padding:0;margin:0}
+.alert{padding:10px;border-radius:8px;margin-bottom:8px}
+.alert.critical{background:linear-gradient(90deg, rgba(255,101,101,0.12), rgba(255,101,101,0.06));border-left:4px solid var(--danger)}
+.alert.warning{background:linear-gradient(90deg, rgba(255,194,89,0.08), rgba(255,194,89,0.03));border-left:4px solid #F2C94C}
+
+/* PROFILE */
+.profile-card{text-align:center}
+.profile-img{width:84px;border-radius:14px;margin-bottom:8px;box-shadow:var(--shadow)}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:var(--card);padding:8px 14px;border-radius:40px;display:flex;gap:8px;box-shadow:0 12px 30px rgba(2,6,23,0.5)}
+.nav-item{padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:700}
+.nav-item.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+
+/* Responsive */
+@media (max-width:640px){
+  .bins-grid{grid-template-columns:1fr}
+  .container{padding:12px}
+  .app-top{padding:10px}
+}
+
+/* small helpers */
+.muted.small{font-size:12px}
+.error{color:var(--danger);margin-top:8px}

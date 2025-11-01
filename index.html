@@ -1,43 +1,25 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Login — Smart Bin App</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Smart Bin App — Splash</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="login-page">
-  <div class="login-container" role="main">
-    <h1>Smart Bin App</h1>
-
-    <label for="username" class="sr-only">Nama pengguna</label>
-    <input id="username" type="text" placeholder="Nama pengguna" autocomplete="username" />
-
-    <label for="password" class="sr-only">Kata sandi</label>
-    <input id="password" type="password" placeholder="Kata sandi" autocomplete="current-password" />
-
-    <button id="loginBtn">Masuk</button>
-    <p id="loginError" class="error-msg" aria-live="polite"></p>
-
-    <p class="hint small">Gunakan: <strong>admin</strong> / <strong>1234</strong> (demo)</p>
+<body class="page splash-page light">
+  <div class="splash">
+    <div class="logo-anim">
+      <img src="assets/logo.svg" alt="Smart Bin App" class="logo">
+    </div>
+    <div class="loader">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="splash-caption">Smart Bin App</div>
   </div>
 
   <script>
-    document.getElementById('loginBtn').addEventListener('click', function(){
-      const u = document.getElementById('username').value.trim();
-      const p = document.getElementById('password').value.trim();
-      const err = document.getElementById('loginError');
-
-      if(!u || !p){ err.textContent = 'Isi username & password.'; return; }
-      // Demo simple auth
-      if(u === 'admin' && p === '1234'){
-        localStorage.setItem('sba_user', JSON.stringify({name: 'Admin', email: 'admin@smartbin.app'}));
-        localStorage.setItem('sba_logged', '1');
-        window.location.href = 'dashboard.html';
-      } else {
-        err.textContent = 'Nama pengguna atau kata sandi salah.';
-      }
-    });
+    // Simple splash -> go to login after animation
+    setTimeout(()=> { window.location.href = 'auth.html'; }, 2200);
   </script>
 </body>
 </html>

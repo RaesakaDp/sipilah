@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Bin App — Alerts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page notifications light">
+  <header class="app-top">
+    <div class="left"><img src="assets/logo.svg" class="mini-logo"><div class="brand"><strong>Smart Bin App</strong><span class="muted"> • Alerts</span></div></div>
+    <div class="right"><button id="btnTheme5" class="icon-btn">🌓</button></div>
+  </header>
+
+  <main class="container">
+    <section class="card card-animated">
+      <h3>System alerts</h3>
+      <ul id="notifList" class="notif-list">
+        <!-- static + dynamic appended by JS -->
+        <li class="alert critical"><strong>Lab Block</strong> • Full (98%) — 10:23</li>
+        <li class="alert warning"><strong>Cafeteria</strong> • Almost full (76%) — 09:12</li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item">Home</a>
+    <a href="history.html" class="nav-item">History</a>
+    <a href="map.html" class="nav-item">Map</a>
+    <a href="notifications.html" class="nav-item active">Alerts</a>
+    <a href="profile.html" class="nav-item">Profile</a>
+  </nav>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
