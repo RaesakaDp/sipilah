@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Smart Bin App — Alerts</title>
+  <title>SIPILAH — Alerts</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page notifications light">
   <header class="app-top">
-    <div class="left"><img src="assets/logo.svg" class="mini-logo"><div class="brand"><strong>Smart Bin App</strong><span class="muted"> • Alerts</span></div></div>
+    <div class="left"><img src="assets/logo.svg" class="mini-logo"><div class="brand"><strong>SIPILAH</strong><span class="muted"> • Alerts</span></div></div>
     <div class="right"><button id="btnTheme5" class="icon-btn">🌓</button></div>
   </header>
 
   <main class="container">
     <section class="card card-animated">
       <h3>System alerts</h3>
+      <ul id="notifList" class="notif-list">
+        <!-- static + dynamic appended by JS -->
+        <li class="alert critical"><strong>Lab Block</strong> • Full (98%) — 10:23</li>
+        <li class="alert warning"><strong>Cafeteria</strong> • Almost full (76%) — 09:12</li>
+      </ul>
       <ul id="notifList" class="notif-list">
         <!-- static + dynamic appended by JS -->
         <li class="alert critical"><strong>Lab Block</strong> • Full (98%) — 10:23</li>
