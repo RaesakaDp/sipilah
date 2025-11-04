@@ -2,10 +2,10 @@
 (function(){
   window.bins = [
     { id:1, name:'Cafeteria', volume:76, temp:28, lat:-7.9528, lng:112.6145, lid:true, auto:true, history:[] },
-    { id:2, name:'Main Parking', volume:22, temp:26, lat:-7.9560, lng:112.6200, lid:false, auto:true, history:[] },
-    { id:3, name:'Graha Rektorat', volume:81, temp:31, lat:-7.9500, lng:112.6180, lid:true, auto:false, history:[] },
-    { id:4, name:'Ged. A-19-A-20', volume:92, temp:31, lat:-7.9500, lng:112.6180, lid:true, auto:false, history:[] },
-    { id:5, name:'Central Park', volume:98, temp:31, lat:-7.9500, lng:112.6180, lid:true, auto:false, history:[] },
+    { id:2, name:'Main Parking', volume:22, temp:26, lat:-7.9560, lng:112.6216, lid:false, auto:true, history:[] },
+    { id:3, name:'Graha Rektorat', volume:81, temp:21, lat:-7.95550, lng:112.6180, lid:true, auto:false, history:[] },
+    { id:4, name:'Ged. A-19-A-20', volume:52, temp: 16, lat:-7.95320, lng:112.7180, lid:true, auto:false, history:[] },
+    { id:5, name:'Central Park', volume:98, temp:31, lat:-7.9500, lng:112.6190, lid:true, auto:false, history:[] }
   ];
 
   // init history

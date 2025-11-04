@@ -153,3 +153,28 @@ const app = (function(){
 })();
 
 document.addEventListener('DOMContentLoaded', ()=> app.init());
+
+// ==== Animasi Card Saat Muncul ====
+document.addEventListener("DOMContentLoaded", () => {
+  // scroll ke atas setiap kali halaman dimuat ulang
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  document.querySelectorAll('.card').forEach((card, i) => {
+    setTimeout(() => card.classList.add('show'), i * 200);
+  });
+
+  loadBins();
+});
+
+// ==== Tombol Refresh ====
+const refreshBtn = document.getElementById('refreshBtn');
+refreshBtn.addEventListener('click', () => {
+  // animasi klik refresh
+  refreshBtn.style.animation = 'refreshPulse 0.6s';
+  setTimeout(() => refreshBtn.style.animation = '', 600);
+
+  // scroll otomatis ke atas setiap kali klik refresh
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  loadBins();
+});
